@@ -1,0 +1,97 @@
+<body class="profile-page">
+
+
+    <div class="wrapper">
+        <div class="header header-filter" style="background-image: url('assets/img/examples/city.jpg');"></div>
+        <div class="main main-raised col-md-12">
+            <div class="profile-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="profile">
+                            <div class="avatar">
+                                <img src="../../../assets/img/christian.jpg" alt="Circle Image" class="img-circle img-responsive img-raised">
+                            </div>
+                            <div class="name">
+                                <h3 class="title">{{user?.name}}
+                                    <p style="color: green;">&#10004;</p>
+                                </h3>
+                                <div class="form-group label-floating ">
+                                    <label class="control-label ">Add New Skills</label>
+                                    <tag-input [(ngModel)]="nskills" name="nskills" [onlyFromAutocomplete]="true" (onTextChange)="call($event)" (onAdd)="onAdd($event)">
+                                        <tag-input-dropdown [showDropdownIfEmpty]="true" [focusFirstElement]="true" [displayBy]="'name'" [identifyBy]="'$key'" [autocompleteItems]="requestAutocompleteItems | async">
+                                            <ng-template let-item="item">
+                                                {{ item.name }} : {{ item.desc }}
+                                            </ng-template>
+                                        </tag-input-dropdown>
+                                    </tag-input>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10" style="text-align:center">
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-1">
+                        <table class="table table-responsive" style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Skill
+                                    </th>
+                                    <th>
+
+                                        User Rating
+
+                                    </th>
+                                    <th>
+
+                                        Company Rating
+
+                                    </th>
+                                    <th>
+
+                                        Rate User
+
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let skill of skills">
+                                    <td><strong>{{skill?.name}}</strong> : <small>{{skill?.desc}}</small></td>
+                                    <td>
+                                        <!-- <input [(ngModel)]="skill.user" /> -->
+
+                                        <md-progress-bar *ngIf="!isUser" class="" [color]="primary" [mode]="buffer" [value]="skill.user" [bufferValue]="20">
+                                        </md-progress-bar><small>{{skill.user * 5/100 | number : '1.2-2'}}/5</small>
+                                        <md-slider (click)="rate($event, 'user')" *ngIf="isUser" [(ngModel)]="skill.user">
+                                        </md-slider>
+                                    </td>
+                                    <td>
+                                        <!-- <input [(ngModel)]="skill.coy" /> -->
+                                        <md-progress-bar *ngIf="!isCompany" class="" [color]="primary" [mode]="buffer" [value]="skill.coy" [bufferValue]="20">
+                                        </md-progress-bar><small>{{skill.coy * 5/100 | number : '1.2-2'}}/5</small>
+                                        <md-slider *ngIf="isCompany" (click)="rate($event, 'coy')" [(ngModel)]="skill.coy">
+                                        </md-slider>
+
+                                    </td>
+                                    <td>
+                                        <!-- <input [(ngModel)]="skill.average" /> -->
+                                        <md-progress-bar class="" [color]="primary" [mode]="buffer" [value]="skill.average" [bufferValue]="20">
+                                        </md-progress-bar><small>{{skill.average * 5/100 | number : '1.2-2'}}/5</small>
+
+                                    </td>
+
+                                </tr>
+                                <tr *ngIf="!skills">
+                                    <td colspan="4">No skills added yet. Start with adding some skills</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>

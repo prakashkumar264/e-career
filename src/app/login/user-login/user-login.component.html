@@ -1,0 +1,174 @@
+<body class="index-page">
+    <!-- Navbar -->
+    <nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+                <a href="http://www.creative-tim.com">
+                    <div class="logo-container">
+                        <div class="logo">
+                            <img src="assets/img/logo.png" alt="Creative Tim Logo" rel="tooltip" title="<b>Material Kit</b> was Designed & Coded with care by the staff from <b>Creative Tim</b>" data-placement="bottom" data-html="true">
+                        </div>
+                        <div class="brand" style="font-size: 25px;">
+                            UpGrowth
+                        </div>
+
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navigation-index">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html" target="_self">
+								Home
+							</a>
+                    </li>
+                    <li>
+                        <a href="#" target="_self">
+								About Us
+							</a>
+                    </li>
+                    <li>
+                        <a href="#" target="_self">
+								Individual
+							</a>
+                    </li>
+                    <li>
+                        <a href="#" target="_self">
+								Companies
+							</a>
+                    </li>
+                    <li>
+                        <a href="#" target="_self">
+								Government
+							</a>
+                    </li>
+                    <li>
+                        <a href="Contactus.html" target="_self">
+								Contact Us
+							</a>
+                    </li>
+                    <li>
+                        <a href="login.html" target="_self">
+								Login In
+							</a>
+                    </li>
+                    <li>
+                        <a href="register.html" target="_self">
+								Register
+							</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <div class="header header-filter" style="background-image: url('https://images.unsplash.com/photo-1423655156442-ccc11daa4e99?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="brand">
+                            <h1>Login</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main main-raised">
+            <div class="container">
+
+
+
+
+                <div class="section landing-section">
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-4">
+                            <div class="card card-signup">
+                                <form #signInForm="ngForm" (ngSubmit)="signIn(signInForm.value.email, signInForm.value.pass)" class="form" method="" action="">
+                                    <div class="header header-primary text-center">
+                                        <h4>Login in With Aadhaar</h4>
+                                        <div class="social-line">
+                                            <a href="#" class="btn btn-simple btn-just-icon">
+                                                <i class="fa fa-facebook-square"></i>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                    <p class="text-divider">Or Be Classical</p>
+                                    <div class="content">
+
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+											<i class="material-icons">email</i>
+										</span>
+                                            <input (ngModel)="email" id="email" name="email" type="email" class="form-control" placeholder="Email...">
+                                        </div>
+
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+											<i class="material-icons">lock_outline</i>
+										</span>
+                                            <input (ngModel)="pass" id="pass" name="pass" type="password" placeholder="Password..." class="form-control" />
+                                        </div>
+
+
+                                    </div>
+                                    <div class="footer text-center">
+                                        <button type="submit" class="btn btn-simple btn-primary btn-lg">Sign In</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="http://www.creative-tim.com">
+	                            Creative Tim
+	                        </a>
+                        </li>
+                        <li>
+                            <a href="http://presentation.creative-tim.com">
+	                           About Us
+	                        </a>
+                        </li>
+                        <li>
+                            <a href="http://blog.creative-tim.com">
+	                           Blog
+	                        </a>
+                        </li>
+                        <li>
+                            <a href="http://www.creative-tim.com/license">
+	                            Licenses
+	                        </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright pull-right">
+                    &copy; 2016, made with <i class="fa fa-heart heart"></i> by Creative Tim
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>

@@ -1,0 +1,122 @@
+<body class="index-page">
+
+  <div class="wrapper">
+    <div class="header header-filter" style="background-image: url('https://images.unsplash.com/photo-1423655156442-ccc11daa4e99?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450');">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="brand">
+              <h1>Job Posting</h1>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main main-raised">
+      <div class="container">
+
+
+
+
+        <div class="section landing-section">
+          <!-- Form starts here -->
+
+          <div class="row">
+
+
+            <div class="col-md-8 col-md-offset-2">
+              <div class="card card-signup">
+                <form #jobpost="ngForm" (ngSubmit)=addpost(jobpost.value) lass="form" method="" action="">
+
+                  <div class="content" style="padding-left: 30px; padding-right: 45px;">
+
+                    <div class="form-group label-floating">
+                      <label class="control-label">Job Name</label>
+                      <input type="text" class="form-control" (ngModel)="jobname" id="jobname" name="jobname">
+                    </div>
+                    <div class="form-group label-floating">
+                      <label class="control-label">Job Category</label>
+                      <input type="email" class="form-control" (ngModel)="jobcat" id="jobcat" name="jobcat">
+                    </div>
+
+                    <div class="dropdown">
+                      <select (ngModel)="jobType" class="form-control" name="jobType" id="jobType" placeholder="Select Type">
+                                    
+                                          <option value="part time">Part Time</option>
+                                          <option value="full time">Full Time</option>
+                                          <option value="internship">Internship</option>
+                                        
+                        </select>
+                    </div>
+
+                    <div class="form-group label-floating">
+                      <label class="control-label">Job Position</label>
+                      <input type="text" (ngModel)="jobposition" class="form-control" id="jobposition" name="jobposition">
+                    </div>
+                    <div class="form-group label-floating">
+                      <label class="control-label">Skills Required</label>
+                      <tag-input [(ngModel)]="skills" name="skills" [onlyFromAutocomplete]="true" (onTextChange)="call($event)">
+                        <tag-input-dropdown [showDropdownIfEmpty]="true" [focusFirstElement]="true" [displayBy]="'name'" [identifyBy]="'$key'" [autocompleteItems]="requestAutocompleteItems | async">
+                          <ng-template let-item="item">
+                            {{ item.name }} : {{ item.desc }}
+                          </ng-template>
+                        </tag-input-dropdown>
+                      </tag-input>
+                    </div>
+
+
+                    <div class="form-group label-floating">
+                      <label class="control-label">Location</label>
+                      <input type="text" (ngModel)="location" class="form-control" id="location" name="location">
+                    </div>
+
+                    <div class="form-group label-floating">
+                      <label class="control-label">Salary</label>
+                      <input type="text" (ngModel)="salary" class="form-control" id="salary" name="salary">
+                    </div>
+
+                    <div class="form-group label-floating">
+                      <label class="control-label">Experience</label>
+                      <input type="text" (ngModel)="experience" class="form-control" id="experience" name="experience">
+                    </div>
+
+
+
+                    <div class="form-group label-floating">
+                      <label class="control-label">Qualifications</label>
+                      <input type="text" (ngModel)="qual" class="form-control" name="qual" id="qual">
+                    </div>
+
+
+
+
+                    <textarea class="form-control" (ngModel)="jobreq" name="jobreq" id="jobreq" placeholder="Job Requirements" rows="5"></textarea>
+
+                    <textarea class="form-control" (ngModel)="jobrole" name="jobrole" id="jobrole" placeholder="Job Roles" rows="5"></textarea>
+
+                    <textarea class="form-control" (ngModel)="jobdesc" name="jobdesc" id="jobdesc" placeholder="Job Description" rows="5"></textarea>
+
+
+                    <button class="btn btn-primary" type="submit">Post Job</button>
+
+                  </div>
+
+                </form>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Form ends here -->
+
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</body>

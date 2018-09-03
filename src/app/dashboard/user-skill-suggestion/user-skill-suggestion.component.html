@@ -1,0 +1,84 @@
+<!--<ul>
+    <li *ngFor="let skill of skills">
+        <div>
+            {{skill.name}} : {{skill.desc}}
+            <p>
+                <li *ngFor="let course of skill.courses"><a href="{{course.link}}" target="_blank">{{course?.name}}</a>&nbsp;<small>{{course?.link}}</small></li>
+            </p>
+        </div>
+    </li>
+</ul>-->
+
+
+<body class="profile-page">
+
+
+    <div class="wrapper">
+        <div class="header header-filter" style="background-image: url('../../../assets/img/examples/city.jpg');"></div>
+
+
+
+
+        <div class="main main-raised">
+            <div class="profile-content">
+                <div class="container">
+                    <h3>Update Your Skills</h3>
+
+                    <div *ngFor="let skill of skills" class="row">
+                        <h3>{{skill.name}}</h3>
+                        <h4>Course Suggestion</h4>
+                        <div *ngFor="let course of skill.courses" class="card card-signup" style="padding-left: 20px;">
+                            <h3>{{course?.name}}</h3>
+                            <a target="" href="{{course.link}}">
+                                <h4>Open Course</h4>
+                            </a>
+                        </div>
+                        <br />
+                    </div>
+
+                    <br />
+                    <!--
+                    <div class="row">
+                        <h3> HTML </h3>
+                        <h4>Course Suggestion</h4>
+                        <div class="card card-signup" style="padding-left: 20px;">
+                            <h3>Course Name</h3>
+                            <h4>Course Level</h4>
+                        </div>
+                        <br />
+                        <div class="card card-signup" style="padding-left: 20px;">
+                            <h3>Course Name</h3>
+                            <h4>Course Level</h4>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="row">
+                        <h3> Java </h3>
+                        <h4>Course Suggestion</h4>
+                        <div class="card card-signup" style="padding-left: 20px;">
+                            <h3>Course Name</h3>
+                            <h4>Course Level</h4>
+                        </div>
+                        <br />
+                        <div class="card card-signup" style="padding-left: 20px;">
+                            <h3>Course Name</h3>
+                            <h4>Course Level</h4>
+                        </div>
+                    </div>-->
+
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+</body>
