@@ -1,1 +1,5 @@
 *.pbxproj binary merge=union
+
+*.html linguist-vendored
+*.js linguist-vendored
+*.css linguist-vendored
