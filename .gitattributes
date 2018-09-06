@@ -1,4 +1,11 @@
 # Force Unix line endings for most file formats (except binary files)
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+###############################################################################
+* text=auto
+
+###############################################################################
+# Set default behavior for command prompt diff.
 *.js         text eol=lf
 *.jsm        text eol=lf
 *.css        text eol=lf
@@ -20,3 +27,6 @@
 # Linguist language overrides
 *.js linguist-language=JavaScript
 *.jsm linguist-language=JavaScript
+*.html linguist-vendored
+*.js linguist-vendored
+*.css linguist-vendored
